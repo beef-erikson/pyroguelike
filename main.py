@@ -2,12 +2,12 @@ import tcod.tileset
 import tcod.context
 import tcod.event
 from character import Character
-from window import create_tileset, create_console
+import window
 
 
 def main() -> None:
-    console = create_console(80, 50)
-    tileset = create_tileset('assets/Cheepicus_14x14.png', 16, 16)
+    console = window.create_console(80, 50)
+    tileset = window.create_tileset('assets/Cheepicus_14x14.png', 16, 16)
 
     player = Character(x=console.width // 2, y=console.height // 2, icon='@')
 
