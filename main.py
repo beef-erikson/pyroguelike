@@ -1,15 +1,22 @@
 import tcod.tileset
 import tcod.context
-import window
+import tcod.event
+from character import Character
+from window import create_tileset, create_console
 
 
 def main() -> None:
-    console = window.create_console(80, 50)
-    tileset = window.create_tileset('assets/Cheepicus_14x14.png', 16, 16)
+    console = create_console(80, 50)
+    tileset = create_tileset('assets/Cheepicus_14x14.png', 16, 16)
 
-    with tcod.context.new(console=console, tileset=tileset, title="pyroguelike", vsync=True) as context:
+    player = Character(character_x=console.width // 2, character_y=console.width // 2, icon='@')
+
+    with tcod.context.new(console=console, tileset=tileset, title="PyRoguelike", vsync=True) as context:
         while True:
-            console.print(x=1, y=1, string="@")
+            console.clear()
+
+            player.on_draw(console)
+
             context.present(console)
             for event in tcod.event.wait():
                 print(event)  # event tracking
