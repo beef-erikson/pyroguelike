@@ -5,13 +5,13 @@ import tcod.event
 
 @define(eq=False)
 class Player(Character):
-    def on_move(self, event: tcod.event.Event, movement_speed: int) -> None:
+    def on_move(self, event: tcod.event.Event) -> None:
         match event:
             case tcod.event.KeyDown(sym=tcod.event.KeySym.LEFT):
-                self.x -= movement_speed
+                self.x -= self.movement_speed
             case tcod.event.KeyDown(sym=tcod.event.KeySym.RIGHT):
-                self.x += movement_speed
+                self.x += self.movement_speed
             case tcod.event.KeyDown(sym=tcod.event.KeySym.UP):
-                self.y -= movement_speed
+                self.y -= self.movement_speed
             case tcod.event.KeyDown(sym=tcod.event.KeySym.DOWN):
-                self.y += movement_speed
+                self.y += self.movement_speed

@@ -8,6 +8,8 @@ class Character:
     y: int
     icon: str
 
+    movement_speed: int
+
     def on_draw(self, console: tcod.console.Console) -> None:
         # Draws the character
         console.print(self.x, self.y, self.icon)
