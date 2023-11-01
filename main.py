@@ -21,8 +21,7 @@ def main() -> None:
 
             for event in tcod.event.wait():
                 print(event)  # event tracking
-                if isinstance(event, tcod.event.Quit):
-                    raise SystemExit()
+                player.on_event(event)
 
 
 if __name__ == '__main__':
