@@ -7,7 +7,6 @@ class Character:
     x: int
     y: int
     icon: str
-
     movement_speed: int
 
     def on_draw(self, console: tcod.console.Console) -> None:
