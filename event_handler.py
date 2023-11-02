@@ -12,14 +12,15 @@ class EventHandler(tcod.event.EventDispatch[Action]):
         action = None
         key = event.sym
 
+        # Player movement
         if key == key.LEFT or key == key.a or key == key.KP_4:
-            action = MovementAction()
+            action = MovementAction(x=-1, y=0)
         elif key == key.RIGHT or key == key.d or key == key.KP_6:
-            action = MovementAction()
+            action = MovementAction(x=1, y=0)
         elif key == key.UP or key == key.w or key == key.KP_8:
-            action = MovementAction()
+            action = MovementAction(x=0, y=-1)
         elif key == key.DOWN or key == key.s or key == key.KP_2:
-            action = MovementAction()
+            action = MovementAction(x=0, y=1)
 
         # Quit the game
         elif key == key.ESCAPE or key == key.q:

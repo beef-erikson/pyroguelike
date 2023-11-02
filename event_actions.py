@@ -1,10 +1,15 @@
+from attrs import define
+
+
 class Action:
     pass
 
 
 class EscapeAction(Action):
-    direction: str
-
-
-class MovementAction(Action):
     pass
+
+
+@define
+class MovementAction(Action):
+    x: int
+    y: int

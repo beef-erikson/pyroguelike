@@ -8,20 +8,26 @@ from event_actions import EscapeAction, MovementAction
 
 
 # Handles controls, quitting, etc.
-def event_handling(player_object: player.Player) -> None:
+def process_input(player_object: player.Player) -> None:
     event_handler = EventHandler()
 
+    # Starts the wait event that listens for events.
     for event in wait():
+
         # Event tracking
         if config.debug:
             print(event)
 
         action = event_handler.dispatch(event)
+
+        # Event handler responses
         if action is None:
             continue
 
+        # Move the player based on movement speed.
         if isinstance(action,  MovementAction):
-            player_object.move(1, 0)
+            speed = player_object.movement_speed
+            player_object.move(action.x * speed, action.y * speed)
 
         # Quits
         if isinstance(action, EscapeAction):

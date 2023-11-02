@@ -26,7 +26,7 @@ def main() -> None:
             engine.draw(console, context, entities, player)
 
             # Handles player movement, quitting, and so on.
-            engine.event_handling(player)
+            engine.process_input(player)
 
 
 
