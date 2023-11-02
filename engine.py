@@ -1,10 +1,10 @@
 import config
+from event_actions import EscapeAction, MovementAction
+from event_handler import EventHandler
 import player
-from tcod.event import KeyDown, KeySym, Quit, wait
 from tcod.console import Console
 from tcod.context import Context
-from event_handler import EventHandler
-from event_actions import EscapeAction, MovementAction
+from tcod.event import wait
 
 
 # Handles controls, quitting, etc.

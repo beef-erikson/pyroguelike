@@ -3,7 +3,7 @@ from entity import Entity
 from player import Player
 from tcod.context import new
 import window
-from event_handler import EventHandler
+
 
 def main() -> None:
     # Window and Tile_set configuration
@@ -27,8 +27,6 @@ def main() -> None:
 
             # Handles player movement, quitting, and so on.
             engine.process_input(player)
-
-
 
 
 if __name__ == '__main__':

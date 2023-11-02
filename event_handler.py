@@ -1,10 +1,14 @@
-import tcod.event
 from event_actions import Action, EscapeAction, MovementAction
+import tcod.event
 
 
 class EventHandler(tcod.event.EventDispatch[Action]):
+    """
+        Event handler that implements functionality based on EventDispatch function overrides.
+    """
+
     # This triggers when the X button is pressed, program terminated.
-    def ev_quit(self, event: tcod.event.Quit):
+    def ev_quit(self, event: tcod.event.Quit) -> None:
         raise SystemExit()
 
     # This triggers whenever a key is depressed.
