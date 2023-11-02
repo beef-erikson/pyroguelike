@@ -13,11 +13,12 @@ class Entity:
     color: tuple
     movement_speed: int
 
+    # Draws the entity
     def on_draw(self, console: tcod.console.Console) -> None:
-        # Draws the character
         console.print(self.x, self.y, self.icon, fg=self.color)
 
     # Todo - fix bounds.
-    def move(self, x: int, y: int):
+    # Moves the entity
+    def move(self, x: int, y: int) -> None:
         self.x += x
         self.y += y
