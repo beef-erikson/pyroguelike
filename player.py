@@ -1,17 +1,19 @@
 from entity import Entity
 from attrs import define
-import tcod.event
+from tcod.event import KeyDown, Event, KeySym
 
 
 @define(eq=False)
 class Player(Entity):
-    def on_move(self, event: tcod.event.Event) -> None:
+    # Todo - Implement bounds
+    def on_move(self, event: Event) -> None:
         match event:
-            case tcod.event.KeyDown(sym=tcod.event.KeySym.LEFT) | tcod.event.KeyDown(sym=tcod.event.KeySym.a):
+            # Movement
+            case KeyDown(sym=KeySym.LEFT) | KeyDown(sym=KeySym.a):
                 self.x -= self.movement_speed
-            case tcod.event.KeyDown(sym=tcod.event.KeySym.RIGHT) | tcod.event.KeyDown(sym=tcod.event.KeySym.d):
+            case KeyDown(sym=KeySym.RIGHT) | KeyDown(sym=KeySym.d):
                 self.x += self.movement_speed
-            case tcod.event.KeyDown(sym=tcod.event.KeySym.UP) | tcod.event.KeyDown(sym=tcod.event.KeySym.w):
+            case KeyDown(sym=KeySym.UP) | KeyDown(sym=KeySym.w):
                 self.y -= self.movement_speed
-            case tcod.event.KeyDown(sym=tcod.event.KeySym.DOWN) | tcod.event.KeyDown(sym=tcod.event.KeySym.s):
+            case KeyDown(sym=KeySym.DOWN) | KeyDown(sym=KeySym.s):
                 self.y += self.movement_speed
