@@ -33,12 +33,8 @@ def main() -> None:
             for event in tcod.event.wait():
                 print(event)  # event tracking
 
-                # player movement
-                player.on_move(event)
-
-                # quits
-                if isinstance(event, tcod.event.Quit):
-                    raise SystemExit()
+                # Event handling for general / player movement.
+                player.on_event(event)
 
 
 if __name__ == '__main__':
