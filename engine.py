@@ -3,30 +3,29 @@ import player
 from tcod.event import KeyDown, KeySym, Quit, wait
 from tcod.console import Console
 from tcod.context import Context
+from event_handler import EventHandler
+from event_actions import EscapeAction, MovementAction
 
 
 # Handles controls, quitting, etc.
 def event_handling(player_object: player.Player) -> None:
+    event_handler = EventHandler()
+
     for event in wait():
         # Event tracking
         if config.debug:
             print(event)
 
-        # Event handling for general / player movement.
-        match event:
-            # Player Movement
-            case KeyDown(sym=KeySym.LEFT) | KeyDown(sym=KeySym.a) | KeyDown(sym=KeySym.KP_4):
-                player_object.x -= player_object.movement_speed
-            case KeyDown(sym=KeySym.RIGHT) | KeyDown(sym=KeySym.d) | KeyDown(sym=KeySym.KP_6):
-                player_object.x += player_object.movement_speed
-            case KeyDown(sym=KeySym.UP) | KeyDown(sym=KeySym.w) | KeyDown(sym=KeySym.KP_8):
-                player_object.y -= player_object.movement_speed
-            case KeyDown(sym=KeySym.DOWN) | KeyDown(sym=KeySym.s) | KeyDown(sym=KeySym.KP_2):
-                player_object.y += player_object.movement_speed
+        action = event_handler.dispatch(event)
+        if action is None:
+            continue
 
-            # Quit
-            case KeyDown(sym=KeySym.q) | Quit():
-                raise SystemExit()
+        if isinstance(action,  MovementAction):
+            player_object.move(1, 0)
+
+        # Quits
+        if isinstance(action, EscapeAction):
+            raise SystemExit()
 
 
 # Draws all entities to console

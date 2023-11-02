@@ -3,7 +3,7 @@ from entity import Entity
 from player import Player
 from tcod.context import new
 import window
-
+from event_handler import EventHandler
 
 def main() -> None:
     # Window and Tile_set configuration
@@ -16,7 +16,7 @@ def main() -> None:
     npc2 = Entity(x=45, y=33, icon='L', movement_speed=1, color=(3, 55, 255))
     item = Entity(x=20, y=2, icon='$', movement_speed=1, color=(255, 215, 0))
 
-    # Store individual entity types here, we'll pass the on to draw iteratively (note this is a set)
+    # Store individual entity types here, we'll pass them on to draw iteratively (note this is a set)
     entities = {player, npc, npc2, item}
 
     # Main Game Loop
@@ -27,6 +27,8 @@ def main() -> None:
 
             # Handles player movement, quitting, and so on.
             engine.event_handling(player)
+
+
 
 
 if __name__ == '__main__':
