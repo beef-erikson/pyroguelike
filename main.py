@@ -1,4 +1,3 @@
-import config
 import engine
 from entity import Entity
 from player import Player
@@ -14,9 +13,11 @@ def main() -> None:
     # Characters
     player = Player(x=console.width // 2, y=console.height // 2, icon='@', movement_speed=1, color=(25, 255, 255))
     npc = Entity(x=15, y=20, icon='&', movement_speed=1, color=(44, 255, 33))
+    npc2 = Entity(x=45, y=33, icon='L', movement_speed=1, color=(3, 55, 255))
+    item = Entity(x=20, y=2, icon='$', movement_speed=1, color=(255, 215, 0))
 
     # Store individual entity types here, we'll pass the on to draw iteratively (note this is a set)
-    entities = {player, npc}
+    entities = {player, npc, npc2, item}
 
     # Main Game Loop
     with new(console=console, tileset=tile_set, title="PyRoguelike", vsync=True) as context:
