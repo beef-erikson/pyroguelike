@@ -1,8 +1,8 @@
 """
     Window helper functions and settings will be here.
 """
-import config
 import tcod.console
+import config
 
 
 def create_console() -> tcod.console.Console:
@@ -11,7 +11,7 @@ def create_console() -> tcod.console.Console:
         return tcod.console.Console(config.WIDTH, config.HEIGHT)
     except Exception as e:
         print('The console window could not be created. Error:', e)
-        raise SystemExit()
+        raise SystemExit() from e
 
 
 def create_tile_set(filepath: str, cols: int, rows: int) -> tcod.tileset.Tileset:
@@ -23,4 +23,4 @@ def create_tile_set(filepath: str, cols: int, rows: int) -> tcod.tileset.Tileset
         return tile_set
     except Exception as e:
         print('The tile set could not be created. Error:', e)
-        raise SystemExit()
+        raise SystemExit() from e
