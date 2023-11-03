@@ -1,19 +1,20 @@
+"""
+    Overrides tcod's event system to make use of the actions in event_action.
+"""
+import tcod.event
 import config
 from event_actions import Action, EscapeAction, MovementAction
-import tcod.event
 
 
 class EventHandler(tcod.event.EventDispatch[Action]):
-    """
-        Event handler that implements functionality based on EventDispatch function overrides.
-    """
+    """ Event handler that implements functionality based on EventDispatch function overrides. """
 
-    # This triggers when the X button is pressed, program terminated.
     def ev_quit(self, event: tcod.event.Quit) -> None:
+        """ This triggers when the X button is pressed, program terminated. """
         raise SystemExit()
 
-    # This triggers whenever a key is depressed.
     def ev_keydown(self, event: tcod.event.KeyDown) -> Action | None:
+        """ This triggers whenever a key is depressed. """
         action = None
         key = event.sym
 
@@ -50,7 +51,7 @@ class EventHandler(tcod.event.EventDispatch[Action]):
                     action = MovementAction(x=1, y=-1)  # NE
 
         # Quit the game
-        if key == key.ESCAPE or key == key.q:
+        if key in (key.ESCAPE, key.q):
             action = EscapeAction()
 
         return action
