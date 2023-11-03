@@ -1,12 +1,10 @@
+"""Any mob, item, player and son on that displays on the map."""
 from attrs import define
 import tcod.console
 
 
 @define(eq=False)
 class Entity:
-    """
-    Any mob, item, player and so on that displays on the map inherits this class.
-    """
     x: int
     y: int
     icon: str
@@ -17,8 +15,10 @@ class Entity:
     def on_draw(self, console: tcod.console.Console) -> None:
         console.print(self.x, self.y, self.icon, fg=self.color)
 
-    # Todo - fix bounds.
-    # Moves the entity
+    # pylint: disable=E1101
     def move(self, x: int, y: int) -> None:
+        """ Moves the Entity. """
+        # pylint: disable=E1101
         self.x += x
+        # pylint: disable=E1101
         self.y += y
