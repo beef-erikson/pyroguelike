@@ -1,14 +1,15 @@
+"""Module for processing input and drawing."""
+from tcod.console import Console
+from tcod.context import Context
+from tcod.event import wait
 import config
 from event_actions import EscapeAction, MovementAction
 from event_handler import EventHandler
 from player import Player
-from tcod.console import Console
-from tcod.context import Context
-from tcod.event import wait
 
 
-# Handles controls, quitting, etc.
 def process_input(player: Player) -> None:
+    """ Handles controls, quitting, etc. """
     event_handler = EventHandler()
 
     # Starts the wait event that listens for events.
@@ -34,8 +35,8 @@ def process_input(player: Player) -> None:
             raise SystemExit()
 
 
-# Draws all entities to console
 def draw(console: Console, context: Context, entities: set, player: Player) -> None:
+    """Draws all entities to console"""
     console.clear()
 
     # Draws all objects
