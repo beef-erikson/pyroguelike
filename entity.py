@@ -8,7 +8,7 @@ class Entity:
     """ Entity attributes """
     x: int
     y: int
-    icon: str
+    icon: chr
     color: tuple
     movement_speed: int
 
