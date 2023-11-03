@@ -10,10 +10,10 @@ While it's bare-bones at the moment, the skeleton is slowly being built. Expect 
 
 ### Configuring
 Inside config.py, you will see numerous properties to change the game:
-- **debug = True** - Change this to False to disable debug messages.
-- **width = 80** - The amount of tiles to use on the x-axis.
-- **height = 50** - The amount of tiles to use on the y-axis.
-- **eight_way_movement = False** - Defaults to 4-way movement.
+- **DEBUG = True** - Change this to False to disable debug messages.
+- **WIDTH = 80** - The amount of tiles to use on the x-axis.
+- **HEIGHT = 50** - The amount of tiles to use on the y-axis.
+- **EIGHT_WAY_MOVEMENT = False** - Defaults to 4-way movement.
 
 ## Current Features
 - 4-Way player controls (WASD, keypad, arrow keys).
