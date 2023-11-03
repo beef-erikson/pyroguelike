@@ -5,7 +5,7 @@ import tcod.console
 # Creates and returns a console based on the given width and height
 def create_console() -> tcod.console.Console:
     try:
-        return tcod.console.Console(config.Width, config.Height)
+        return tcod.console.Console(config.WIDTH, config.HEIGHT)
     except Exception as e:
         print('The console window could not be created. Error:', e)
 
