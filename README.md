@@ -1,12 +1,10 @@
 # pyroguelike
-I'm building a playground to test game ideas, skills, mechanics and so on easily and quickly.
+A playground-in-development to test game ideas, skills, mechanics and so on easily and quickly.
 
-Once it's in a more-functional state, I will release this in versions. Currently, I'm working on the framework and hope to push daily updates.
-
-Simply run main.py.
+While it's bare-bones at the moment, the skeleton is slowly being built. Run main.py to execute and config.py contains a few items to tweak. Except daily updates.
 ## Current Features
 - Simple player controls working (WASD, keypad, arrow keys)
 - Quit with 'q' or ESC.
-- Can spawn in multiple entities with color
+- Can spawn in multiple entities with color, see main.py.
 
 
