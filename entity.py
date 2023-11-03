@@ -5,6 +5,7 @@ import tcod.console
 
 @define(eq=False)
 class Entity:
+    """ Entity attributes """
     x: int
     y: int
     icon: str
@@ -13,6 +14,7 @@ class Entity:
 
     # Draws the entity
     def on_draw(self, console: tcod.console.Console) -> None:
+        """ Draws the Entity at x, y using the icon in the Entity's color property. """
         console.print(self.x, self.y, self.icon, fg=self.color)
 
     # pylint: disable=E1101
