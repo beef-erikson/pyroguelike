@@ -35,7 +35,7 @@ def process_input(player: Player) -> None:
 
 
 # Draws all entities to console
-def draw(console: Console, context: Context, entities: set, player_object: player.Player) -> None:
+def draw(console: Console, context: Context, entities: set, player_object: Player) -> None:
     console.clear()
 
     # Draws all objects
