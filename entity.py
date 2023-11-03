@@ -15,7 +15,7 @@ class Entity:
     # Draws the entity
     def on_draw(self, console: tcod.console.Console) -> None:
         """ Draws the Entity at x, y using the icon in the Entity's color property. """
-        # pyline: disable=E1101
+        # pylint: disable=E1101
         console.print(self.x, self.y, self.icon, fg=self.color)
 
     # pylint: disable=E1101
