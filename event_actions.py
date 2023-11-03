@@ -4,7 +4,6 @@
 from attrs import define
 
 
-@define(eq=False)
 class Action:
     """ Used for all handling. """
 
