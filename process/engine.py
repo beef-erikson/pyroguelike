@@ -1,10 +1,10 @@
 """Module for processing input and drawing."""
+from datetime import datetime
 from tcod.console import Console
 from tcod.context import Context
 from tcod.event import wait
-import process.color as color
 import config
-from datetime import datetime
+from process import color
 from process.event_actions import EscapeAction, MovementAction
 from process.event_handler import EventHandler
 from entities.player import Player
@@ -47,7 +47,8 @@ def draw(console: Console, context: Context, entities: set, player: Player) -> N
 
     # Debug setting - Prints players X/Y
     if config.DEBUG:
-        console.print(1, 1, "X: " + str(player.x) + " Y: " + str(player.y), fg=color.DARK_OLIVE_GREEN)
+        console.print(1, 1, "X: " + str(player.x) + " Y: " + str(player.y),
+                      fg=color.DARK_OLIVE_GREEN)
 
     # Displays the time
     if config.SHOW_TIME:
