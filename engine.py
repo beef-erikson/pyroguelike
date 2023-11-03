@@ -1,14 +1,14 @@
 import config
 from event_actions import EscapeAction, MovementAction
 from event_handler import EventHandler
-import player
+from player import Player
 from tcod.console import Console
 from tcod.context import Context
 from tcod.event import wait
 
 
 # Handles controls, quitting, etc.
-def process_input(player_object: player.Player) -> None:
+def process_input(player: Player) -> None:
     event_handler = EventHandler()
 
     # Starts the wait event that listens for events.
@@ -26,8 +26,8 @@ def process_input(player_object: player.Player) -> None:
 
         # Move the player based on movement speed.
         if isinstance(action,  MovementAction):
-            speed = player_object.movement_speed
-            player_object.move(action.x * speed, action.y * speed)
+            speed = player.movement_speed
+            player.move(action.x * speed, action.y * speed)
 
         # Quits
         if isinstance(action, EscapeAction):
