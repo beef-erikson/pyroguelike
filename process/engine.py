@@ -4,9 +4,9 @@ from tcod.context import Context
 from tcod.event import wait
 import config
 from datetime import datetime
-from event_actions import EscapeAction, MovementAction
-from event_handler import EventHandler
-from player import Player
+from process.event_actions import EscapeAction, MovementAction
+from process.event_handler import EventHandler
+from entities.player import Player
 
 
 def process_input(player: Player) -> None:

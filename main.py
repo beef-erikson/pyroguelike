@@ -2,10 +2,9 @@
     Main file that should be run to play the game.
 """
 from tcod.context import new
-import engine
-from entity import Entity
-from player import Player
-import window
+from entities.entity import Entity
+from entities.player import Player
+from process import engine, window
 
 
 def main() -> None:

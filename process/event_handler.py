@@ -3,7 +3,7 @@
 """
 import tcod.event
 import config
-from event_actions import Action, EscapeAction, MovementAction
+from process.event_actions import Action, EscapeAction, MovementAction
 
 
 class EventHandler(tcod.event.EventDispatch[Action]):
