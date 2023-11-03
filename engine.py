@@ -35,7 +35,7 @@ def process_input(player: Player) -> None:
 
 
 # Draws all entities to console
-def draw(console: Console, context: Context, entities: set, player_object: Player) -> None:
+def draw(console: Console, context: Context, entities: set, player: Player) -> None:
     console.clear()
 
     # Draws all objects
@@ -44,7 +44,7 @@ def draw(console: Console, context: Context, entities: set, player_object: Playe
 
     # Debug setting - Prints players X/Y
     if config.debug:
-        console.print(0, 0, "X: " + str(player_object.x) + " Y: " + str(player_object.y))
+        console.print(0, 0, "X: " + str(player.x) + " Y: " + str(player.y))
 
     # Writes to Console
     context.present(console)
