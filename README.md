@@ -15,7 +15,7 @@ Inside config.py, you will see numerous properties to change the game:
 - **height = 50** - The amount of tiles to use on the y-axis.
 - **eight_way_movement = False** - Defaults to 4-way movement.
 
-### Current Features
+## Current Features
 - 4-Way player controls (WASD, keypad, arrow keys).
 - 8-Way player controls (keypad-only).
 - Quit with 'q' or ESC.
