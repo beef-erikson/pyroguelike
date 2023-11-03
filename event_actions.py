@@ -6,12 +6,10 @@ from attrs import define
 
 class Action:
     """ Used for all handling. """
-    pass
 
 
 class EscapeAction(Action):
     """ Used when a 'quit' key is pressed. """
-    pass
 
 
 @define
