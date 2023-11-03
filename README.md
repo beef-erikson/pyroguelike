@@ -20,4 +20,5 @@ Inside config.py, you will see numerous properties to change the game:
 - 4-Way player controls (WASD, keypad, arrow keys).
 - 8-Way player controls (keypad-only).
 - Quit with 'q' or ESC.
-- Can spawn in multiple entities with color, see main.py.
+- Can spawn in multiple entities, see main.py.
+- Massive color list to draw from. See process/color.py for the full list that can be used.
