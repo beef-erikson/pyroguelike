@@ -3,6 +3,7 @@ from tcod.console import Console
 from tcod.context import Context
 from tcod.event import wait
 import config
+from datetime import datetime
 from event_actions import EscapeAction, MovementAction
 from event_handler import EventHandler
 from player import Player
@@ -45,7 +46,11 @@ def draw(console: Console, context: Context, entities: set, player: Player) -> N
 
     # Debug setting - Prints players X/Y
     if config.DEBUG:
-        console.print(0, 0, "X: " + str(player.x) + " Y: " + str(player.y))
+        console.print(1, 1, "X: " + str(player.x) + " Y: " + str(player.y))
+
+    # Displays the time
+    if config.SHOW_TIME:
+        console.print(console.width - 12, console.height - 2, datetime.now().strftime("%H:%M:%S %p"))
 
     # Writes to Console
     context.present(console)
