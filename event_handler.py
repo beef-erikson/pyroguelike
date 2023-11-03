@@ -19,14 +19,16 @@ class EventHandler(tcod.event.EventDispatch[Action]):
 
         # Player movement: 4-Way controls
         if not config.eight_way_control:
-            if key == key.LEFT or key == key.a or key == key.KP_4:
-                action = MovementAction(x=-1, y=0)
-            elif key == key.RIGHT or key == key.d or key == key.KP_6:
-                action = MovementAction(x=1, y=0)
-            elif key == key.UP or key == key.w or key == key.KP_8:
-                action = MovementAction(x=0, y=-1)
-            elif key == key.DOWN or key == key.s or key == key.KP_2:
-                action = MovementAction(x=0, y=1)
+            match key:
+                case key.LEFT | key.a | key.KP_4:
+                    action = MovementAction(x=-1, y=0)
+                case key.RIGHT | key.d | key.KP_6:
+                    action = MovementAction(x=1, y=0)
+                case key.UP | key.w | key.KP_8:
+                    action = MovementAction(x=0, y=-1)
+                case key.DOWN | key.s | key.KP_2:
+                    action = MovementAction(x=0, y=1)
+
         # Player movement: 8-Way controls
         else:
             match key:
