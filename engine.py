@@ -15,7 +15,7 @@ def process_input(player: Player) -> None:
     for event in wait():
 
         # Event tracking
-        if config.debug:
+        if config.Debug:
             print(event)
 
         action = event_handler.dispatch(event)
@@ -43,7 +43,7 @@ def draw(console: Console, context: Context, entities: set, player: Player) -> N
         console.print(item.x, item.y, item.icon, fg=item.color)
 
     # Debug setting - Prints players X/Y
-    if config.debug:
+    if config.Debug:
         console.print(0, 0, "X: " + str(player.x) + " Y: " + str(player.y))
 
     # Writes to Console

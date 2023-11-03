@@ -2,7 +2,7 @@
     CONFIGURATIONS - Change at will
 """
 
-debug = True  # Debug flag to display debug messages.
-width = 80  # Number of tiles wide.
-height = 50  # Number of tiles high.
-eight_way_control = False  # Set to True for diagonal control.
+Debug = True  # Debug flag to display debug messages.
+Width = 80  # Number of tiles wide.
+Height = 50  # Number of tiles high.
+Eight_way_control = False  # Set to True for diagonal control.

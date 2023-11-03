@@ -18,7 +18,7 @@ class EventHandler(tcod.event.EventDispatch[Action]):
         key = event.sym
 
         # Player movement: 4-Way controls
-        if not config.eight_way_control:
+        if not config.Eight_way_control:
             match key:
                 case key.LEFT | key.a | key.KP_4:
                     action = MovementAction(x=-1, y=0)
