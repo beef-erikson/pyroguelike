@@ -3,12 +3,12 @@ A playground-in-development to test game ideas, skills, mechanics and so on easi
 
 While it's bare-bones at the moment, the skeleton is slowly being built. Expect daily updates.
 
-### Installation
+## Installation
 1. Most IDE's will do this automatically, but make certain you have the packages listed in requirements.txt installed.
 2. Run main.py to execute the game.
 
 
-### Configuring
+## Configuring
 Inside config.py, you will see numerous properties to change the game:
 - **DEBUG = True** - Change this to False to disable debug messages.
 - **WIDTH = 80** - The amount of tiles to use on the x-axis.
