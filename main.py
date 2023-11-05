@@ -5,6 +5,7 @@ from tcod.context import new
 from entities.entity import Entity
 from entities.player import Player
 from process import engine, window, color
+from map.main_map import MainMap
 
 
 def main() -> None:
