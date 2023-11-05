@@ -8,6 +8,7 @@ from process import color
 from process.event_actions import EscapeAction, MovementAction
 from process.event_handler import EventHandler
 from entities.player import Player
+from map.main_map import MainMap
 
 
 def process_input(player: Player) -> None:
@@ -37,9 +38,13 @@ def process_input(player: Player) -> None:
             raise SystemExit()
 
 
-def draw(console: Console, context: Context, entities: set, player: Player) -> None:
+def draw(console: Console, context: Context, entities: set,
+         player: Player, main_map: MainMap) -> None:
     """Draws all entities to console"""
     console.clear()
+
+    # Draws map
+    main_map.render_map(console)
 
     # Draws all objects
     for item in entities:

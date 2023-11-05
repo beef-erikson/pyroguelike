@@ -2,6 +2,8 @@
     Main file that should be run to play the game.
 """
 from tcod.context import new
+
+import config
 from entities.entity import Entity
 from entities.player import Player
 from process import engine, window, color
@@ -26,11 +28,15 @@ def main() -> None:
     # Store individual entity types here, we'll pass them on to draw iteratively.
     entities = {player, npc, npc2, item}
 
+    # Create map
+    main_map = MainMap(config.MAP_WIDTH, config.MAP_HEIGHT)
+
     # Main Game Loop
     with new(console=console, tileset=tile_set, title="PyRoguelike", vsync=True) as context:
         while True:
             # Draws debug, entities, and so on.
-            engine.draw(console, context, entities, player)
+            engine.draw(console=console, context=context, entities=entities,
+                        player=player, main_map=main_map)
 
             # Handles player movement, quitting, and so on.
             engine.process_input(player)

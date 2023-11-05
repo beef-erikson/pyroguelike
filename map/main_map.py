@@ -2,7 +2,7 @@
 from numpy import full
 from tcod.console import Console
 from map import tiles
-
+from process import color
 
 class MainMap:
     """ MainMap class used for making the dungeon maps. """
@@ -17,6 +17,10 @@ class MainMap:
         """ Checks to see if entity is in bounds of the map. """
         return 0 <= x < self.width and 0 <= y < self.height
 
+    # TODO - Left off here.
     def render_map(self, console: Console) -> None:
         """ Renders the map to fill with tiles """
-        console.rgba[0:self.width, 0:self.height] = self.map_tiles["dark"]
+        console.rgba[0, 0] = (ord(' '), color.get_rgba(color.BLACK, 255),
+                              color.get_rgba(color.DARK_BLUE, 255))
+
+# tiles.standard_floor['dark']
