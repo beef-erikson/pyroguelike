@@ -1,18 +1,6 @@
 """
     Colors!
 """
-
-
-def get_rgba(color: tuple, alpha: int) -> tuple:
-    """ Takes a color from the color list and a supplied alpha value and returns an RGBA tuple. """
-    value_list = []
-    for value in color:
-        value_list.append(value)
-    value_list.append(alpha)
-
-    return tuple(value_list)
-
-
 MAROON = (128, 0, 0)
 DARK_RED = (139, 0, 0)
 BROWN = (165, 42, 42)

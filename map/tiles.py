@@ -1,11 +1,11 @@
 """ Manage tiles for mapping. """
-from numpy import dtype, char, bool_, ndarray, array
+from numpy import dtype, character, bool_, ndarray, array
 from process import color
 
 # Holds the character, foreground and background colors.
 tile_graphic = dtype(
     [
-        ('character', char),
+        ('character', character),
         ('fg', '4B'),  # 4 bytes needs to hold color values for rgba.
         ('bg', '4B')
     ]
@@ -31,9 +31,7 @@ def create_tile(walkable: int, transparent: int,
 
 # Create tiles here
 standard_floor = create_tile(walkable=True, transparent=True,
-                             dark=(ord(" "), color.get_rgba(color.BLACK, 255),
-                                   color.get_rgba(color.DARK_BLUE, 255)))
+                             dark=(ord(" "), color.BLACK, color.DARK_BLUE))
 
 standard_wall = create_tile(walkable=False, transparent=False,
-                            dark=(ord(" "), color.get_rgba(color.BLACK, 255),
-                                  color.get_rgba(color.MIDNIGHT_BLUE, 255)))
+                            dark=(ord(" "), color.BLACK, color.MIDNIGHT_BLUE))
