@@ -1,11 +1,11 @@
 """ Manage tiles for mapping. """
-from numpy import dtype, character, bool_, ndarray, array
+from numpy import dtype, int32, bool_, ndarray, array
 from process import color
 
 # Holds the character, foreground and background colors.
 tile_graphic = dtype(
     [
-        ('character', character),
+        ('character', int32),
         ('fg', '4B'),  # 4 bytes needs to hold color values for rgba.
         ('bg', '4B')
     ]

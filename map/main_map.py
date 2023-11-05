@@ -1,6 +1,8 @@
 """ Code to handle map bounds and rendering. """
 from numpy import full
 from tcod.console import Console
+
+import config
 from map import tiles
 from process import color
 
@@ -20,7 +22,7 @@ class MainMap:
     # TODO - Left off here.
     def render_map(self, console: Console) -> None:
         """ Renders the map to fill with tiles """
-        console.rgba[0, 0] = (ord(' '), color.get_rgba(color.BLACK, 255),
-                              color.get_rgba(color.DARK_BLUE, 255))
+        console.rgba[0:config.MAP_WIDTH, 0:config.MAP_HEIGHT] = tiles.standard_floor['dark']
+            # (ord(' '), color.get_rgba(color.BLACK, 255), color.get_rgba(color.DARK_BLUE, 255))
 
 # tiles.standard_floor['dark']
