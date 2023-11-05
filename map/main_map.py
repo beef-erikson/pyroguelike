@@ -1,7 +1,7 @@
 """ Code to handle map bounds and rendering. """
 from numpy import full
 from tcod.console import Console
-import tiles
+from map import tiles
 
 
 class MainMap:
