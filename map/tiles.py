@@ -6,9 +6,8 @@ from process import color
 tile_graphic = dtype(
     [
         ('character', char),
-        ('fg', '3B'),  # 3 bytes needs to hold color values.
-        ('bg', '3B'),
-        ('alpha', '1B')  # 1 byte for alpha
+        ('fg', '4B'),  # 4 bytes needs to hold color values for rgba.
+        ('bg', '4B')
     ]
 )
 
@@ -24,15 +23,17 @@ tile_props = dtype(
 
 def create_tile(walkable: int, transparent: int,
                 # dark is defined with the character to draw,
-                # followed by the foreground RBG, then the background RGB.
-                dark: (int, (int, int, int), (int, int, int), int)) -> ndarray:
+                # followed by the foreground RGBA, then the background RGBA.
+                dark: (int, (int, int, int, int), (int, int, int, int))) -> ndarray:
     """ Returns a tile in the tile_props struct type"""
     return array((walkable, transparent, dark), dtype=tile_props)
 
 
 # Create tiles here
 standard_floor = create_tile(walkable=True, transparent=True,
-                             dark=(ord(" "), color.BLACK, color.DARK_BLUE, 255))
+                             dark=(ord(" "), color.get_rgba(color.BLACK, 255),
+                                   color.get_rgba(color.DARK_BLUE, 255)))
 
 standard_wall = create_tile(walkable=False, transparent=False,
-                            dark=(ord(" "), color.BLACK, color.MIDNIGHT_BLUE, 255))
+                            dark=(ord(" "), color.get_rgba(color.BLACK, 255),
+                                  color.get_rgba(color.MIDNIGHT_BLUE, 255)))
