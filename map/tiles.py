@@ -31,7 +31,7 @@ def create_tile(walkable: int, transparent: int,
 
 # Create tiles here
 standard_floor = create_tile(walkable=True, transparent=True,
-                             dark=(ord(" "), color.BLACK, color.MIDNIGHT_BLUE))
+                             dark=(ord(" "), color.BLACK, color.DARK_BLUE))
 
 standard_wall = create_tile(walkable=False, transparent=False,
-                            dark=(ord(" "), color.BLACK, color.DARK_BLUE))
+                            dark=(ord(" "), color.BLACK, color.MIDNIGHT_BLUE))
