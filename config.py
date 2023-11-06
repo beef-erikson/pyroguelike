@@ -11,8 +11,8 @@ WIDTH = 80  # Number of tiles wide.
 HEIGHT = 50  # Number of tiles high.
 
 """ MAP PROPERTIES """
-MAP_BUFFER_X = 0
-MAP_BUFFER_Y = 3
+MAP_BUFFER_X = 0  # Number of tiles before drawing map on the x-axis.
+MAP_BUFFER_Y = 3  # Number of tiles before drawing map on the y-axis.
 MAP_WIDTH = 80  # Number of map tiles wide.
 MAP_HEIGHT = 44  # Number of map tiles high.
 
