@@ -5,7 +5,7 @@ from process import color
 # Holds the character, foreground and background colors.
 tile_graphic = dtype(
     [
-        ('character', int32),
+        ('character', '4B'),  # 4 bytes need to hold unicode values.
         ('fg', '4B'),  # 4 bytes needs to hold color values for rgba.
         ('bg', '4B')
     ]
