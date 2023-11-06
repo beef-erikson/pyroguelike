@@ -19,8 +19,8 @@ Inside config.py, you will see numerous properties to change the game:
 ### Map Properties
 - **MAP_BUFFER_X = 0** - Number of tiles before drawing map on the x-axis.
 - **MAP_BUFFER_Y = 3** - Number of tiles before drawing map on the y-axis.
-- **MAP_WIDTH = 75** - The amount of tiles to draw for the main map on the x-axis.
-- **MAP_HEIGHT = 75** - The amount of tiles to draw for the main map on the y-axis.
+- **MAP_WIDTH = 75** - Tile number to stop drawing on the x-axis.
+- **MAP_HEIGHT = 75** - Tile number to stop drawing on the y-axis.
 ### Movement
 - **EIGHT_WAY_MOVEMENT = False** - Defaults to 4-way movement.
 
