@@ -23,7 +23,7 @@ def main() -> None:
                     icon='@', movement_speed=1, color=color.RED)
     npc = Entity(x=15, y=20, icon='&', movement_speed=1, color=color.DARK_SLATE_BLUE)
     npc2 = Entity(x=45, y=33, icon='L', movement_speed=1, color=color.BURLY_WOOD)
-    item = Entity(x=20, y=2, icon='$', movement_speed=1, color=color.GOLD)
+    item = Entity(x=20, y=26, icon='$', movement_speed=1, color=color.GOLD)
 
     # Store individual entity types here, we'll pass them on to draw iteratively.
     entities = {player, npc, npc2, item}
