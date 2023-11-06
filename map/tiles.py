@@ -1,5 +1,5 @@
 """ Manage tiles for mapping. """
-from numpy import dtype, int32, bool_, ndarray, array
+from numpy import dtype, bool_, ndarray, array
 from process import color
 
 # Holds the character, foreground and background colors.
@@ -36,4 +36,4 @@ standard_floor = create_tile(walkable=True, transparent=True,
 
 standard_wall = create_tile(walkable=False, transparent=False,
                             dark=(ord(" "), color.get_rgba(color.BLACK, 255),
-                                  color.get_rgba(color.MIDNIGHT_BLUE, 255)))
+                                  color.get_rgba(color.YELLOW, 255)))
