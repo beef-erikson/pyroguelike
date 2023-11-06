@@ -10,12 +10,18 @@ While it's bare-bones at the moment, the skeleton is slowly being built. Expect 
 
 ## Configuring
 Inside config.py, you will see numerous properties to change the game:
+### Debug and Time Display
 - **DEBUG = True** - False disables debug messages.
 - **SHOW_TIME = True** - Displays time in window. Disable with False.
+### Window Properties
 - **WIDTH = 80** - The amount of tiles to use on the x-axis.
 - **HEIGHT = 50** - The amount of tiles to use on the y-axis.
+### Map Properties
+- **MAP_BUFFER_X = 0** - Number of tiles before drawing map on the x-axis.
+- **MAP_BUFFER_Y = 3** - Number of tiles before drawing map on the y-axis.
 - **MAP_WIDTH = 75** - The amount of tiles to draw for the main map on the x-axis.
 - **MAP_HEIGHT = 75** - The amount of tiles to draw for the main map on the y-axis.
+### Movement
 - **EIGHT_WAY_MOVEMENT = False** - Defaults to 4-way movement.
 
 
@@ -25,3 +31,4 @@ Inside config.py, you will see numerous properties to change the game:
 - Quit with 'q' or ESC.
 - Can spawn in multiple entities, see main.py.
 - Massive color list to draw from. See process/color.py for the full list that can be used.
+- RGBA tile support.
