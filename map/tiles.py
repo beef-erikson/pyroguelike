@@ -32,8 +32,8 @@ def create_tile(walkable: int, transparent: int,
 # Create tiles here
 standard_floor = create_tile(walkable=True, transparent=True,
                              dark=(ord(" "), color.get_rgba(color.BLACK, 255),
-                                   color.get_rgba(color.DARK_BLUE, 255)))
+                                   color.get_rgba(color.SLATE_GRAY, 255)))
 
 standard_wall = create_tile(walkable=False, transparent=False,
                             dark=(ord(" "), color.get_rgba(color.BLACK, 255),
-                                  color.get_rgba(color.YELLOW, 255)))
+                                  color.get_rgba(color.SLATE_BLUE, 255)))

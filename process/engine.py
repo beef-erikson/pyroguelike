@@ -53,7 +53,7 @@ def draw(console: Console, context: Context, entities: set,
     # Debug setting - Prints players X/Y
     if config.DEBUG:
         console.print(1, 1, "X: " + str(player.x) + " Y: " + str(player.y),
-                      fg=color.DARK_OLIVE_GREEN)
+                      fg=color.DARK_GRAY)
 
     # Displays the time
     if config.SHOW_TIME:
