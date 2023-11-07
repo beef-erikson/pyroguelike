@@ -29,7 +29,8 @@ def main() -> None:
     entities = {player, npc, npc2, item}
 
     # Create map
-    main_map = MainMap(config.MAP_WIDTH, config.MAP_HEIGHT)
+    main_map = MainMap(config.MAP_WIDTH, config.MAP_HEIGHT,
+                       config.MAP_BUFFER_WIDTH, config.MAP_BUFFER_HEIGHT)
 
     # Main Game Loop
     with new(console=console, tileset=tile_set, title="PyRoguelike", vsync=True) as context:
