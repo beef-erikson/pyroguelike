@@ -22,7 +22,7 @@ Inside config.py, you will see numerous properties to change the game:
 - **MAP_WIDTH = 80** - Tile number to stop drawing on the x-axis.
 - **MAP_HEIGHT = 47** - Tile number to stop drawing on the y-axis.
 ### Movement
-- **EIGHT_WAY_MOVEMENT = False** - Defaults to 4-way movement.
+- **EIGHT_WAY_MOVEMENT = True** - Defaults to 8-way movement.
 
 
 ## Current Features
